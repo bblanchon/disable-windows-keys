@@ -4,6 +4,8 @@ add_executable(disable-windows-keys WIN32
 	app.c
 	mainwindow.c
 	mainwindow.h
+	resource.h
+	resource.rc
 	shared.h
 )
 

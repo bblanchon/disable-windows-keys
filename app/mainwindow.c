@@ -1,6 +1,7 @@
 #include <tchar.h>
 
 #include "mainwindow.h"
+#include "resource.h"
 #include "shared.h"
 
 #define FLASH_TIMER_ID 1
@@ -76,7 +77,7 @@ void RegisterMainWindowClass(HINSTANCE hInstance) {
   wcex.cbClsExtra = 0;
   wcex.cbWndExtra = 0;
   wcex.hInstance = hInstance;
-  wcex.hIcon = 0;
+  wcex.hIcon = LoadIcon(hInstance, MAKEINTRESOURCE(IDI_APPICON));
   wcex.hCursor = 0;
   wcex.hbrBackground = (HBRUSH)(COLOR_WINDOW + 1);
   wcex.lpszMenuName = 0;
