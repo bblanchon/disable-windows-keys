@@ -1,5 +1,6 @@
-CMakeSettings.json
 /build/
-*.exe
 /.vs/
 /out/
+/CMakeSettings.json
+*.exe
+*.aps

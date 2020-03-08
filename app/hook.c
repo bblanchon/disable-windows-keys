@@ -7,11 +7,10 @@
 #include "shared.h"
 
 BOOL CALLBACK FlashAppWindowsCallback(HWND hwnd, LPARAM lParam) {
-  TCHAR name[64];
+  TCHAR szClassName[64];
+  GetClassName(hwnd, szClassName, ARRAYSIZE(szClassName));
 
-  UINT sz = sizeof(name) / sizeof(TCHAR);
-  GetWindowText(hwnd, name, 64);
-  if (_tcscmp(name, MAIN_WINDOW_TITLE) == 0) {
+  if (_tcscmp(szClassName, MAIN_WINDOW_CLASS) == 0) {
     PostMessage(hwnd, WM_KEYPRESS_INTERCEPTED, 0, 0);
   }
   return TRUE;

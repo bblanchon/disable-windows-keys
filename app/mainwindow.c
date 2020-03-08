@@ -17,11 +17,14 @@ static void OnPaint(HWND hwnd) {
 
   SelectObject(hdc, hFont);
 
+  HINSTANCE hInstance = GetModuleHandle(NULL);
+
+  TCHAR szExplanation[128];
+  size_t nExplanation = LoadString(hInstance, IDS_EXPLANATION, szExplanation, ARRAYSIZE(szExplanation));
+
   rect.top = 20;
   rect.left = 40;
-  DrawText(hdc, TEXT("La touche Windows est désactivée."), -1, &rect, DT_TOP | DT_LEFT);
-  rect.top = 50;
-  DrawText(hdc, TEXT("Fermer cette fenètre pour la réactiver."), -1, &rect, DT_TOP | DT_LEFT);
+  DrawText(hdc, szExplanation, nExplanation, &rect, DT_TOP | DT_LEFT);
 
   EndPaint(hwnd, &ps);
 }
@@ -90,7 +93,11 @@ void RegisterMainWindowClass(HINSTANCE hInstance) {
 }
 
 HWND CreateMainWindow(HINSTANCE hInstance) {
-  return CreateWindow(MAIN_WINDOW_CLASS, MAIN_WINDOW_TITLE, (WS_OVERLAPPED | WS_CAPTION | WS_SYSMENU | WS_MINIMIZEBOX | WS_MAXIMIZEBOX),
+  TCHAR szTitle[32];
+  size_t nTitle = LoadString(hInstance, IDS_TITLE, szTitle, ARRAYSIZE(szTitle) - 1);
+  szTitle[nTitle] = 0;
+
+  return CreateWindow(MAIN_WINDOW_CLASS, szTitle, (WS_OVERLAPPED | WS_CAPTION | WS_SYSMENU | WS_MINIMIZEBOX | WS_MAXIMIZEBOX),
                       CW_USEDEFAULT, 0, 450, 150, NULL, NULL, hInstance,
                       NULL);
 }

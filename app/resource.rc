@@ -1,3 +1,9 @@
 #include "resource.h"
 
 IDI_APPICON       ICON         "../assets/icon.ico"
+
+STRINGTABLE
+BEGIN
+  IDS_TITLE, "Désactiver les touches Windows"
+  IDS_EXPLANATION, "Les touches Windows sont désactivées.\nFermer cette fenètre pour les réactiver."
+END
