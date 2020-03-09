@@ -6,6 +6,8 @@
 
 #include "shared.h"
 
+#define DLLEXPORT __declspec(dllexport)
+
 BOOL CALLBACK FlashAppWindowsCallback(HWND hwnd, LPARAM lParam) {
   TCHAR szClassName[64];
   GetClassName(hwnd, szClassName, ARRAYSIZE(szClassName));
@@ -16,8 +18,7 @@ BOOL CALLBACK FlashAppWindowsCallback(HWND hwnd, LPARAM lParam) {
   return TRUE;
 }
 
-LRESULT __declspec(dllexport)
-    HookProc(int nCode, WPARAM wParam, LPARAM lParam) {
+DLLEXPORT LRESULT CALLBACK HookProc(int nCode, WPARAM wParam, LPARAM lParam) {
   if (nCode == HC_ACTION) {
     assert(wParam == WM_KEYDOWN || wParam == WM_KEYUP ||
            wParam == WM_SYSKEYDOWN || wParam == WM_SYSKEYUP);

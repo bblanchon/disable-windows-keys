@@ -6,6 +6,7 @@
 #include <tchar.h>
 
 LPCTSTR hookDllName = TEXT("disable-windows-keys-hook.dll");
+LPCSTR hookProcName = "_HookProc@12";
 
 void ShowError(HINSTANCE hInstance, LPCTSTR message) {
   TCHAR title[64];
@@ -33,7 +34,7 @@ int APIENTRY WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
     return 1;
   }
 
-  HOOKPROC hookProc = (HOOKPROC)GetProcAddress(hdll, "HookProc");
+  HOOKPROC hookProc = (HOOKPROC)GetProcAddress(hdll, hookProcName);
   if (hookProc == NULL) {
     ShowError(hInstance, TEXT("Loaded DLL is incompatible"));
     return 1;
