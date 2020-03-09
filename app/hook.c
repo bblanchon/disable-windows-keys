@@ -1,8 +1,6 @@
 #include "shared.h"
 #include "stdafx.h"
 
-#define DLLEXPORT __declspec(dllexport)
-
 BOOL CALLBACK FlashAppWindowsCallback(HWND hwnd, LPARAM lParam) {
   UNREFERENCED_PARAMETER(lParam);
 
@@ -15,7 +13,7 @@ BOOL CALLBACK FlashAppWindowsCallback(HWND hwnd, LPARAM lParam) {
   return TRUE;
 }
 
-DLLEXPORT LRESULT CALLBACK HookProc(int nCode, WPARAM wParam, LPARAM lParam) {
+LRESULT CALLBACK HookProc(int nCode, WPARAM wParam, LPARAM lParam) {
   if (nCode == HC_ACTION) {
     assert(wParam == WM_KEYDOWN || wParam == WM_KEYUP ||
            wParam == WM_SYSKEYDOWN || wParam == WM_SYSKEYUP);

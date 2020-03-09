@@ -17,6 +17,7 @@ add_executable(disable-windows-keys WIN32
 
 add_library(disable-windows-keys-hook SHARED
 	hook.c
+	hook.def
 	shared.h
 	stdafx.h
 )

@@ -3,7 +3,7 @@
 #include "stdafx.h"
 
 LPCTSTR hookDllName = TEXT("disable-windows-keys-hook.dll");
-LPCSTR hookProcName = "_HookProc@12";
+LPCSTR hookProcName = "HookProc";
 
 void ShowError(HINSTANCE hInstance, LPCTSTR message) {
   TCHAR title[64];
