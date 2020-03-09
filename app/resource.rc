@@ -1,9 +1,18 @@
 #include "resource.h"
+#include <ntdef.h>
 
 IDI_APPICON       ICON         "../assets/icon.ico"
 
 STRINGTABLE
+LANGUAGE LANG_FRENCH, SUBLANG_NEUTRAL
 BEGIN
   IDS_TITLE, "Désactiver les touches Windows"
   IDS_EXPLANATION, "Les touches Windows sont désactivées.\nFermer cette fenètre pour les réactiver."
+END
+
+STRINGTABLE
+LANGUAGE LANG_ENGLISH, SUBLANG_NEUTRAL
+BEGIN
+  IDS_TITLE, "Disable Windows keys"
+  IDS_EXPLANATION, "Windows keys are disabled.\nClose this window to reactivate them."
 END
