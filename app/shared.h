@@ -1,0 +1,4 @@
+#define MAIN_WINDOW_TITLE TEXT("Disable Windows Key")
+#define MAIN_WINDOW_CLASS TEXT("MainWnd")
+
+#define WM_KEYPRESS_INTERCEPTED (WM_USER + 0x0001)
