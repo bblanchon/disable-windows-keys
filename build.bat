@@ -4,7 +4,7 @@ setlocal
 @set PATH=%PATH:C:\MinGW\bin;=%
 @set CONFIGURATION=Release
 @set SOURCE_DIR=%~dp0
-@set BUILD_DIR=%~dp0build\staging
+@set BUILD_DIR=%~dp0build\vs2019
 @set SETUP_DIR=%BUILD_DIR%\setup\%CONFIGURATION%
 
 mkdir "%BUILD_DIR%"

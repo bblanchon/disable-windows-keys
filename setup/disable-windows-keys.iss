@@ -1,9 +1,7 @@
-#define AppName        "Disable Windows Keys"
-
 #ifndef BuildDir
-#define BuildDir     "..\out\build\x64-Debug\app"
+#define BuildDir     "..\build\vs2019\app\Debug"
 #endif
-
+                                                
 #define MainExe     "disable-windows-keys.exe"
 
 #define Version      "1.0.0"
