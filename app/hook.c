@@ -1,10 +1,5 @@
-#define WIN32_LEAN_AND_MEAN
-#define VC_EXTRALEAN
-#include <assert.h>
-#include <tchar.h>
-#include <windows.h>
-
 #include "shared.h"
+#include "stdafx.h"
 
 #define DLLEXPORT __declspec(dllexport)
 

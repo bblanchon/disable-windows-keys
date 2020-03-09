@@ -1,8 +1,7 @@
-#include <tchar.h>
-
 #include "mainwindow.h"
 #include "resource.h"
 #include "shared.h"
+#include "stdafx.h"
 
 #define FLASH_TIMER_ID 1
 

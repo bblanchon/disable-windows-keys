@@ -8,11 +8,13 @@ add_executable(disable-windows-keys WIN32
 	resource.h
 	resource.rc
 	shared.h
+	stdafx.h
 )
 
 add_library(disable-windows-keys-hook SHARED
 	hook.c
 	shared.h
+	stdafx.h
 )
 
 add_dependencies(disable-windows-keys disable-windows-keys-hook)

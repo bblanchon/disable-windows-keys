@@ -1,9 +1,6 @@
 #include "mainwindow.h"
 #include "resource.h"
-
-#include <windows.h>
-#include <varargs.h>
-#include <tchar.h>
+#include "stdafx.h"
 
 LPCTSTR hookDllName = TEXT("disable-windows-keys-hook.dll");
 LPCSTR hookProcName = "_HookProc@12";
