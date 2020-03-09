@@ -29,7 +29,9 @@ static void OnPaint(HWND hwnd) {
   EndPaint(hwnd, &ps);
 }
 
-static void OnTimer(HWND hwnd) {
+static void OnTimer(HWND hwnd, UINT_PTR uTimerID) {
+  KillTimer(hwnd, uTimerID);
+
   FLASHWINFO flashinfo = {sizeof(FLASHWINFO)};
   flashinfo.hwnd = hwnd;
   flashinfo.dwFlags = FLASHW_STOP;
@@ -56,7 +58,7 @@ static LRESULT CALLBACK WindowProc(HWND hwnd, UINT message, WPARAM wParam,
     break;
 
   case WM_TIMER:
-    OnTimer(hwnd);
+    OnTimer(hwnd, wParam);
     break;
 
   case WM_PAINT:
