@@ -19,7 +19,8 @@ static void OnPaint(HWND hwnd) {
   HINSTANCE hInstance = GetModuleHandle(NULL);
 
   TCHAR szExplanation[128];
-  size_t nExplanation = LoadString(hInstance, IDS_EXPLANATION, szExplanation, ARRAYSIZE(szExplanation));
+  size_t nExplanation = LoadString(hInstance, IDS_EXPLANATION, szExplanation,
+                                   ARRAYSIZE(szExplanation));
 
   rect.top = 20;
   rect.left = 40;
@@ -93,10 +94,12 @@ void RegisterMainWindowClass(HINSTANCE hInstance) {
 
 HWND CreateMainWindow(HINSTANCE hInstance) {
   TCHAR szTitle[32];
-  size_t nTitle = LoadString(hInstance, IDS_TITLE, szTitle, ARRAYSIZE(szTitle) - 1);
+  size_t nTitle =
+      LoadString(hInstance, IDS_TITLE, szTitle, ARRAYSIZE(szTitle) - 1);
   szTitle[nTitle] = 0;
 
-  return CreateWindow(MAIN_WINDOW_CLASS, szTitle, (WS_OVERLAPPED | WS_CAPTION | WS_SYSMENU | WS_MINIMIZEBOX | WS_MAXIMIZEBOX),
-                      CW_USEDEFAULT, 0, 450, 150, NULL, NULL, hInstance,
-                      NULL);
+  return CreateWindow(MAIN_WINDOW_CLASS, szTitle,
+                      (WS_OVERLAPPED | WS_CAPTION | WS_SYSMENU |
+                       WS_MINIMIZEBOX | WS_MAXIMIZEBOX),
+                      CW_USEDEFAULT, 0, 450, 150, NULL, NULL, hInstance, NULL);
 }
