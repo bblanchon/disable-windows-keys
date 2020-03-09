@@ -24,6 +24,8 @@ static void OnPaint(HWND hwnd) {
 
   rect.top = 20;
   rect.left = 40;
+  rect.bottom -= 20;
+  rect.right -= 40;
   DrawText(hdc, szExplanation, nExplanation, &rect, DT_TOP | DT_LEFT);
 
   EndPaint(hwnd, &ps);
@@ -91,7 +93,7 @@ void RegisterMainWindowClass(HINSTANCE hInstance) {
   RegisterClassEx(&wcex);
 
   hFont =
-      CreateFont(30, 0, 0, 0, 0, TRUE, 0, 0, 0, 0, 0, 0, 0, TEXT("Segoe UI"));
+      CreateFont(30, 0, 0, 0, 300, FALSE, FALSE, FALSE, 0, 0, 0, 0, FF_SWISS, TEXT("Segoe UI Light"));
 }
 
 HWND CreateMainWindow(HINSTANCE hInstance) {
