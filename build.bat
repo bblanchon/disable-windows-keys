@@ -7,8 +7,6 @@ setlocal
 @set BUILD_DIR=%~dp0build\staging
 @set SETUP_DIR=%BUILD_DIR%\setup\%CONFIGURATION%
 
-: call "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Auxiliary\Build\vcvars32.bat" || goto :ERROR
-
 mkdir "%BUILD_DIR%"
 pushd "%BUILD_DIR%"
   cmake -G "Visual Studio 16 2019" -A Win32 %SOURCE_DIR% || goto :ERROR
