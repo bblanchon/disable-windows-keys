@@ -1,4 +1,5 @@
 add_compile_definitions(UNICODE _UNICODE)
+set(CMAKE_MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Debug>:Debug>")
 
 add_executable(disable-windows-keys WIN32
 	app.c
