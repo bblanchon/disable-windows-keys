@@ -11,17 +11,18 @@
 ; Do not use the same AppId value in installers for other applications.
 ; (To generate a new GUID, click Tools | Generate GUID inside the IDE.)
 AppId={{194E6FB7-14A0-4244-9B23-6102C748B287}
-AppName={#AppName}
+AppName={cm:AppName}
 AppVersion={#Version}
-AppVerName={#AppName}
+AppVerName={cm:AppName}
 AppPublisher="Benoit Blanchon"
 AppSupportURL="https://github.com/bblanchon/disable-windows-keys/issues"
-DefaultDirName={userpf}\{#AppName}
+DefaultDirName={userpf}\disable-windows-keys
 DisableDirPage=yes
 DisableProgramGroupPage=yes
 DisableReadyPage=yes
 OutputBaseFilename=disable-windows-keys
 Compression=lzma
+ShowLanguageDialog=no
 SolidCompression=yes
 #ifdef SignTool
 SignTool={#SignTool}
@@ -30,7 +31,8 @@ UninstallDisplayIcon={app}\{#MainExe}
 PrivilegesRequired=lowest
 
 [Languages]
-Name: "english"; MessagesFile: "compiler:Default.isl"
+Name: "english"; MessagesFile: "compiler:Default.isl,Languages/English.isl"
+Name: "french"; MessagesFile: "compiler:Languages/French.isl,Languages/French.isl"
 
 [Tasks]
 Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}"
@@ -40,8 +42,8 @@ Source: "{#BuildDir}\*.exe"; DestDir: "{app}"; Flags: ignoreversion signonce
 Source: "{#BuildDir}\*.dll"; DestDir: "{app}"; Flags: ignoreversion signonce
 
 [Icons]
-Name: "{userprograms}\{#AppName}"; Filename: "{app}\{#MainExe}";
-Name: "{userdesktop}\{#AppName}"; Filename: "{app}\{#MainExe}"; Tasks: desktopicon
+Name: "{userprograms}\{cm:AppName}"; Filename: "{app}\{#MainExe}";
+Name: "{userdesktop}\{cm:AppName}"; Filename: "{app}\{#MainExe}"; Tasks: desktopicon
 
 [Run]
-Filename: "{app}\{#MainExe}"; Description: "{cm:LaunchProgram,{#StringChange(AppName, '&', '&&')}}"; Flags: nowait postinstall skipifsilent
+Filename: "{app}\{#MainExe}"; Description: "{cm:LaunchProgram}"; Flags: nowait postinstall skipifsilent
