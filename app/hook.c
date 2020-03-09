@@ -4,6 +4,8 @@
 #define DLLEXPORT __declspec(dllexport)
 
 BOOL CALLBACK FlashAppWindowsCallback(HWND hwnd, LPARAM lParam) {
+  UNREFERENCED_PARAMETER(lParam);
+
   TCHAR szClassName[64];
   GetClassName(hwnd, szClassName, ARRAYSIZE(szClassName));
 

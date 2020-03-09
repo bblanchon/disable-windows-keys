@@ -17,7 +17,7 @@ void ShowErrorF(HINSTANCE hInstance, LPCTSTR format, ...) {
   va_start(args, format);
 
   TCHAR message[128];
-  _vsntprintf(message, ARRAYSIZE(message), format, args);
+  _vsntprintf_s(message, ARRAYSIZE(message), _TRUNCATE, format, args);
   ShowError(hInstance, message);
 
   va_end(args);
@@ -25,6 +25,10 @@ void ShowErrorF(HINSTANCE hInstance, LPCTSTR format, ...) {
 
 int APIENTRY WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
                      LPSTR lpCmdLine, int nCmdShow) {
+
+  UNREFERENCED_PARAMETER(hPrevInstance);
+  UNREFERENCED_PARAMETER(lpCmdLine);
+
   HMODULE hdll = LoadLibrary(hookDllName);
   if (hdll == NULL) {
     ShowErrorF(hInstance, TEXT("Failed to load \"%s\""), hookDllName);

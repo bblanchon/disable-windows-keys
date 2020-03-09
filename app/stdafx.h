@@ -9,5 +9,4 @@
 
 #include <assert.h>
 #include <tchar.h>
-#include <varargs.h>
 #include <windows.h>
