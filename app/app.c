@@ -23,11 +23,13 @@ void ShowErrorF(HINSTANCE hInstance, LPCTSTR format, ...) {
   va_end(args);
 }
 
-int APIENTRY WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
-                     LPSTR lpCmdLine, int nCmdShow) {
+int WINAPI _tWinMain(__in HINSTANCE hInstance, __in_opt HINSTANCE hPrevInstance,
+                     __in LPSTR lpCmdLine, __in int nShowCmd) {
 
   UNREFERENCED_PARAMETER(hPrevInstance);
-  UNREFERENCED_PARAMETER(lpCmdLine);
+
+  LANGID langid = _tcstoul(lpCmdLine, NULL, 16);
+  SetThreadUILanguage(langid);
 
   HMODULE hdll = LoadLibrary(hookDllName);
   if (hdll == NULL) {
@@ -43,13 +45,14 @@ int APIENTRY WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
 
   HHOOK hook = SetWindowsHookEx(WH_KEYBOARD_LL, hookProc, hdll, 0);
   if (hookProc == NULL) {
-    ShowErrorF(hInstance, TEXT("Failed to install hook (code=%u)"), GetLastError());
+    ShowErrorF(hInstance, TEXT("Failed to install hook (code=%u)"),
+               GetLastError());
     return 1;
   }
 
   RegisterMainWindowClass(hInstance);
   HWND hwnd = CreateMainWindow(hInstance);
-  ShowWindow(hwnd, nCmdShow);
+  ShowWindow(hwnd, nShowCmd);
   UpdateWindow(hwnd);
 
   MSG msg;
