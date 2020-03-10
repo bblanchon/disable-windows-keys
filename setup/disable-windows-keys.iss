@@ -33,6 +33,7 @@ PrivilegesRequired=lowest
 [Languages]
 Name: "english"; MessagesFile: "compiler:Default.isl,Languages/English.isl"
 Name: "french"; MessagesFile: "compiler:Languages/French.isl,Languages/French.isl"
+Name: "german"; MessagesFile: "compiler:Languages/German.isl,Languages/German.isl"
 
 [Tasks]
 Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}"
