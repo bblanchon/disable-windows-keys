@@ -4,14 +4,14 @@ image: /images/disable-windows-keys-logo-1200.png
 ---
 
 <div class="fullscreen bg-1">
-	<img src="{% link images/disable-windows-keys-logo.svg %}" class="mw-90" alt="Logo of Disable Windows Keys">
+	<img src="{{ 'images/disable-windows-keys-logo.svg' | relative_url }}" class="mw-90" alt="Logo of Disable Windows Keys">
   <h1 class="maintitle">Disable Windows Keys</h1>
 	<p class="subtitle">The simplest way to disable the Windows keys!</p>
 </div>
 
 <div class="fullscreen bg-2">
 	<h2 data-aos="fade-up">Easy to use</h2>
-	<img src="{% link images/disable-windows-keys-screenshot.png %}" alt="Screenshot of Disable Windows Keys" class="dropshadow mw-90"  data-aos="fade-up">
+	<img src="{{ 'images/disable-windows-keys-screenshot.png' | relative_url }}" alt="Screenshot of Disable Windows Keys" class="dropshadow mw-90"  data-aos="fade-up">
 	<div>
 		<p>Open the app to disable the Windows keys.</p>
 		<p>Close the app to re-enable them.</p>
@@ -79,9 +79,9 @@ image: /images/disable-windows-keys-logo-1200.png
 	"name":"{{site.title}}",
 	"description":"{{site.description}}",
 	"screenshot":[
-		"{% link images/disable-windows-keys-screenshot.png %}"
+		"{{ 'images/disable-windows-keys-screenshot.png' | absolute_url }}"
 	],
-	"image":"{% link images/disable-windows-keys-1200.png %}",
+	"image":"{{ 'images/disable-windows-keys-1200.png' | absolute_url }}",
 	"applicationCategory":"UtilitiesApplication",
 	"operatingSystem":"Windows 7, 8, or 10",
 	"author":{
