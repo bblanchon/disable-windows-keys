@@ -1,0 +1,17 @@
+.fullscreen {
+	min-height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+}
+
+.row {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.col {
+	flex: 1 1 0px;
+	margin: 10px;
+}

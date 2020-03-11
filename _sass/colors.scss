@@ -1,0 +1,40 @@
+$color1: #A6E1FA;
+$color2: #0E6BA8;
+$color3: #0A2472;
+$color4: #001C55;
+$color5: #00072D;
+$color0: #ffb600;
+
+.bg-0 {
+	background-color: $color0;
+	color: black;
+}
+
+.bg-1 {
+	background-color: $color1;
+	color: black;
+}
+
+.bg-2 {
+	background-color: $color2;
+	color: white;
+}
+
+.bg-3 {
+	background-color: $color3;
+	color: white;
+}
+
+.bg-4 {
+	background-color: $color4;
+	color: white;
+}
+
+.bg-5 {
+	background-color: $color5;
+	color: white;
+}
+
+a {
+	color: inherit;
+}

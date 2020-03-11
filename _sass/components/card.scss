@@ -1,0 +1,22 @@
+.card {
+	border: 1px solid white;
+	box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+	border-radius: 5px;
+	min-width: 300px;
+}
+
+$whiteish: rgba(255,255,255, 0.2);
+
+.card-header {
+	text-align: center;
+	font-size: inherit;
+	font-family: $text-font-family;
+	border-bottom: 1px solid white;
+	padding: 20px 10px;
+	margin: 0;
+	background:$whiteish;
+}
+
+.card-body {
+	padding: 10px;
+}

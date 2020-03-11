@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css?family=Francois+One|Josefin+Sans&display=swap');
+$heading-font-family: 'Francois One', sans-serif;
+$text-font-family: 'Josefin Sans', sans-serif;
+
+h1, h2, h3, .h3 {
+	font-family: $heading-font-family;
+	font-weight: normal;
+}
+
+body {
+	font-family: $text-font-family;
+}
+
+@media screen and (min-width: 500px) {
+	h1 { font-size: 60px; }
+	h2 { font-size: 50px; }
+	.h3 { font-size: 30px; }
+	body { font-size: 20px; }
+}
+
+@media screen and (min-width: 800px) {
+	h1 { font-size: 70px; }
+	h2 { font-size: 60px; }
+	.h3 { font-size: 40px; }
+	body { font-size: 30px; }
+}
+
+ul {
+	line-height: 150%;
+}

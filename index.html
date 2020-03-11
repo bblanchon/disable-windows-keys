@@ -1,0 +1,114 @@
+---
+layout: base
+image: /images/disable-windows-keys-logo-1200.png
+---
+
+<div class="fullscreen bg-1">
+	<img src="{% link images/disable-windows-keys-logo.svg %}" class="mw-90" alt="Logo of Disable Windows Keys">
+  <h1 class="maintitle">Disable Windows Keys</h1>
+	<p class="subtitle">The simplest way to disable the Windows keys!</p>
+</div>
+
+<div class="fullscreen bg-2">
+	<h2 data-aos="fade-up">Easy to use</h2>
+	<img src="{% link images/disable-windows-keys-screenshot.png %}" alt="Screenshot of Disable Windows Keys" class="dropshadow mw-90"  data-aos="fade-up">
+	<div>
+		<p>Open the app to disable the Windows keys.</p>
+		<p>Close the app to re-enable them.</p>
+	</div>
+</div>
+
+<div class="fullscreen bg-3">
+	<h2 data-aos="fade-up" id="features">Features</h2>
+	<ul>
+		<li data-aos="fade-up" data-aos-anchor="#features" data-aos-delay="100">Dead simple</li>
+		<li data-aos="fade-up" data-aos-anchor="#features" data-aos-delay="200">No fancy or useless feature</li>
+		<li data-aos="fade-up" data-aos-anchor="#features" data-aos-delay="300">Tiny footprint</li>
+		<li data-aos="fade-up" data-aos-anchor="#features" data-aos-delay="400">Works on Windows 7, 8, and 10</li>
+		<li data-aos="fade-up" data-aos-anchor="#features" data-aos-delay="500">Self-contained, nothing else to download</li>
+		<li data-aos="fade-up" data-aos-anchor="#features" data-aos-delay="600">Perfect for games</li>
+		<li data-aos="fade-up" data-aos-anchor="#features" data-aos-delay="700">Translated in several languages</li>
+		<li data-aos="fade-up" data-aos-anchor="#features" data-aos-delay="800">Signed binary files for more security</li>
+		<li data-aos="fade-up" data-aos-anchor="#features" data-aos-delay="900">Source code available</li>
+	</ul>
+</div>
+
+<div class="fullscreen bg-4">
+	<h2 data-aos="fade-up">Pricing</h2>
+	<div class="row">
+		<div class="card col bg-5" data-aos="fade-right">
+			<h3 class="card-header">Source code</h3>
+			<div class="card-body">
+				<p class="h3 text-align-center text-glow">Free</p>
+				<ul>
+					<li>Compile yourself</li>
+					<li>CMake + MSVC</li>
+				</ul>
+				<p class="text-align-center">
+					<a href="https://github.com/bblanchon/disable-windows-keys" class="btn bg-0">Go to GitHub</a>
+				</p>
+			</div>
+		</div>
+		<div class="card col bg-5" data-aos="fade-left">
+			<h3 class="card-header">Ready to use</h3>
+			<div class="card-body">
+				<p class="h3 text-align-center text-glow">$1</p>
+				<ul>
+					<li>Signed files</li>
+					<li>Secure payment</li>
+				</ul>
+				<p class="text-align-center">
+					<a href="https://payhip.com/b/T6si"
+					   class="payhip-buy-button btn bg-0"
+					   data-theme="none"
+					   data-product="T6si"
+					   data-initiated="true">
+					Purchase</a>
+					<br>
+					(via <a href="https://payhip.com?fp_ref=bblanchon">PayHip</a>)
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script type="application/ld+json">
+{
+	"@context":"http://schema.org",
+	"@type":"SoftwareApplication",
+	"name":"{{site.title}}",
+	"description":"{{site.description}}",
+	"screenshot":[
+		"{% link images/disable-windows-keys-screenshot.png %}"
+	],
+	"image":"{% link images/disable-windows-keys-1200.png %}",
+	"applicationCategory":"UtilitiesApplication",
+	"operatingSystem":"Windows 7, 8, or 10",
+	"author":{
+		"@type":"Person",
+		"name":"Benoit Blanchon",
+		"url":"https://benoitblanchon.fr"
+	},
+	"aggregateRating":{
+		"@type":"AggregateRating",
+		"ratingValue":5,
+		"reviewCount":0
+	},
+	"offers": [
+		{
+			"@type": "Offer",
+			"name": "Source code",
+			"price": "0",
+			"priceCurrency": "USD",
+			"url": "https://github.com/bblanchon/disable-windows-keys"
+		},
+		{
+			"@type": "Offer",
+			"name": "Ready to use",
+			"price": "1.00",
+			"priceCurrency": "USD",
+			"url": "https://payhip.com/b/T6si"
+		}
+	]
+}
+</script>
