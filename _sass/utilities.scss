@@ -14,3 +14,14 @@
 .mw-90 {
 	max-width: 90%;
 }
+
+.thumbnail {
+	object-fit: cover;
+	width: 200px;
+	height: 200px;
+	border: 2px solid black;
+	border-radius: 5px;
+	background-color: white;
+	padding: 5px;
+	flex: 0;
+}
