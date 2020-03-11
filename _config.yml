@@ -29,7 +29,8 @@ github_username:  bblanchon
 
 # Build settings
 plugins:
-  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
 
 # Exclude from processing.
 # The following items will not be processed, by default.
