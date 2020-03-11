@@ -28,7 +28,6 @@ twitter_username: BenoitBlanchon
 github_username:  bblanchon
 
 # Build settings
-theme: minima
 plugins:
   - jekyll-feed
 
