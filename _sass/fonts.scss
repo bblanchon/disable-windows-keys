@@ -12,17 +12,21 @@ body {
 }
 
 @media screen and (min-width: 500px) {
-	h1 { font-size: 60px; }
-	h2 { font-size: 50px; }
-	.h3 { font-size: 30px; }
-	body { font-size: 20px; }
+	.font-size-xxl {
+		font-size: 20px;
+		h1 { font-size: 60px; }
+		h2 { font-size: 50px; }
+		.h3 { font-size: 30px; }
+	}
 }
 
 @media screen and (min-width: 800px) {
-	h1 { font-size: 70px; }
-	h2 { font-size: 60px; }
-	.h3 { font-size: 40px; }
-	body { font-size: 30px; }
+	.font-size-xxl {
+		font-size: 30px;
+		h1 { font-size: 70px; }
+		h2 { font-size: 60px; }
+		.h3 { font-size: 40px; }
+	}
 }
 
 ul {

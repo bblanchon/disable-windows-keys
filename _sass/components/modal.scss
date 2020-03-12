@@ -1,0 +1,36 @@
+.modal {
+  visibility: hidden;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1000;
+}
+
+.modal:target {
+  visibility: visible;
+}
+
+.modal-body {
+  z-index: 1010;
+  background-color: #fff;
+  color: black;
+  width: 70%;
+  max-width: 400px;
+  left: 50%;
+  padding: 20px;
+  border-radius: 5px;
+  margin: 15% auto;
+}
+
+.modal-close {
+  float: right;
+  font-size: 200%;
+  text-decoration: none;
+}
+
+.modal-title {
+  margin-top: 0;
+}
