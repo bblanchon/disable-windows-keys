@@ -8,7 +8,7 @@
                                                 
 #define MainExe     "disable-windows-keys.exe"
 
-#define Version      "1.0.0"
+#define Version      GetStringFileInfo(BuildDir + "\" + MainExe, "ProductVersion")
 
 [Setup]
 ; NOTE: The value of AppId uniquely identifies this application.
@@ -24,7 +24,7 @@ DefaultDirName={userpf}\disable-windows-keys
 DisableDirPage=yes
 DisableProgramGroupPage=yes
 DisableReadyPage=yes
-OutputBaseFilename=disable-windows-keys
+OutputBaseFilename=disable-windows-keys-{#Version}
 Compression=lzma
 ShowLanguageDialog=no
 SolidCompression=yes

@@ -1,0 +1,2 @@
+#define PRODUCT_VERSION_STR "1.0.0"
+#define PRODUCT_VERSION_CSV 1, 0, 0, 0
