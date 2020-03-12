@@ -1,3 +1,7 @@
+# Disable Windows Keys
+# https://bblanchon.github.io/disable-windows-keys
+# Copyright (C) 2020  Benoit Blanchon
+
 set(CERTIFICATE_THUMBPRINT "77019b7fece9cc99f06103897b9e9c0545bdc4b9")
 set(DESCRIPTION "Disable Windows Key")
 set(SCRIPT "${CMAKE_CURRENT_SOURCE_DIR}/disable-windows-keys.iss")

@@ -1,3 +1,7 @@
+// Disable Windows Keys
+// https://bblanchon.github.io/disable-windows-keys
+// Copyright (C) 2020  Benoit Blanchon
+
 #include "mainwindow.h"
 #include "resource.h"
 #include "stdafx.h"

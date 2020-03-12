@@ -1,3 +1,7 @@
+# Disable Windows Keys
+# https://bblanchon.github.io/disable-windows-keys
+# Copyright (C) 2020  Benoit Blanchon
+
 add_compile_definitions(UNICODE _UNICODE)
 set(CMAKE_MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Debug>:Debug>")
 
