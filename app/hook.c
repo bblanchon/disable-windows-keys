@@ -5,29 +5,28 @@
 #include "shared.h"
 #include "stdafx.h"
 
-BOOL CALLBACK FlashAppWindowsCallback(HWND hwnd, LPARAM lParam) {
-  UNREFERENCED_PARAMETER(lParam);
-
-  TCHAR szClassName[64];
-  GetClassName(hwnd, szClassName, ARRAYSIZE(szClassName));
-
-  if (_tcscmp(szClassName, MAIN_WINDOW_CLASS) == 0) {
-    PostMessage(hwnd, WM_KEYPRESS_INTERCEPTED, 0, 0);
-  }
-  return TRUE;
-}
-
 LRESULT CALLBACK HookProc(int nCode, WPARAM wParam, LPARAM lParam) {
   if (nCode == HC_ACTION) {
     assert(wParam == WM_KEYDOWN || wParam == WM_KEYUP ||
            wParam == WM_SYSKEYDOWN || wParam == WM_SYSKEYUP);
 
     DWORD vkCode = ((KBDLLHOOKSTRUCT *)lParam)->vkCode;
+
+    // If it's the Windows key
     if (vkCode == VK_LWIN || vkCode == VK_RWIN) {
-      EnumWindows(FlashAppWindowsCallback, 0);
+
+      // Notify app
+      if (wParam == WM_KEYDOWN || wParam == WM_SYSKEYDOWN) {
+        HWND hwnd = FindWindow(MAIN_WINDOW_CLASS, 0);
+        if (hwnd)
+          PostMessage(hwnd, WM_KEYPRESS_INTERCEPTED, 0, 0);
+      }
+
+      // Stop propagation
       return 1;
     }
   }
 
+  // Propagate the event
   return CallNextHookEx(NULL, nCode, wParam, lParam);
 }

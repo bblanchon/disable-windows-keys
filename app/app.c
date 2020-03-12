@@ -4,10 +4,13 @@
 
 #include "mainwindow.h"
 #include "resource.h"
+#include "shared.h"
 #include "stdafx.h"
 
 LPCTSTR hookDllName = TEXT("disable-windows-keys-hook.dll");
 LPCSTR hookProcName = "HookProc";
+LPCTSTR szSingleInstanceMutexName = TEXT("{20CDC7AA-BCF7-4C09-B639-258CC68AC68D}");
+
 
 void ShowError(HINSTANCE hInstance, LPCTSTR message) {
   TCHAR title[64];
@@ -32,21 +35,35 @@ int WINAPI _tWinMain(__in HINSTANCE hInstance, __in_opt HINSTANCE hPrevInstance,
 
   UNREFERENCED_PARAMETER(hPrevInstance);
 
-  LANGID langid = (LANGID)_tcstoul(lpCmdLine, NULL, 16);
-  SetThreadUILanguage(langid);
+  // If an instance is already running, 
+  CreateMutex(NULL, TRUE, szSingleInstanceMutexName);
+  if (GetLastError() == ERROR_ALREADY_EXISTS) {
+    HWND hwnd = FindWindow(MAIN_WINDOW_CLASS, 0);
+    if (IsIconic(hwnd))
+      ShowWindow(hwnd, SW_RESTORE);
+    SetForegroundWindow(hwnd);
+    return 0;
+  }
 
+  // Get language from the command line
+  LANGID langid = (LANGID)_tcstoul(lpCmdLine, NULL, 16);
+  if (langid) SetThreadUILanguage(langid);
+
+  // Load hook DLL
   HMODULE hdll = LoadLibrary(hookDllName);
   if (hdll == NULL) {
     ShowErrorF(hInstance, TEXT("Failed to load \"%s\""), hookDllName);
     return 1;
   }
 
+  // Get the Hook procedure
   HOOKPROC hookProc = (HOOKPROC)GetProcAddress(hdll, hookProcName);
   if (hookProc == NULL) {
     ShowError(hInstance, TEXT("Loaded DLL is incompatible"));
     return 1;
   }
 
+  // Install the hook
   HHOOK hook = SetWindowsHookEx(WH_KEYBOARD_LL, hookProc, hdll, 0);
   if (hookProc == NULL) {
     ShowErrorF(hInstance, TEXT("Failed to install hook (code=%u)"),
@@ -54,6 +71,7 @@ int WINAPI _tWinMain(__in HINSTANCE hInstance, __in_opt HINSTANCE hPrevInstance,
     return 1;
   }
 
+  // Create window
   RegisterMainWindowClass(hInstance);
   HWND hwnd = CreateMainWindow(hInstance);
   ShowWindow(hwnd, nShowCmd);
