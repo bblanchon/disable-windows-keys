@@ -6,3 +6,12 @@
 	align-items: center;
 	padding: 20px;
 }
+
+.footer .nav-link {
+	margin: 20px;
+	text-decoration: none;
+
+	&:hover {
+		text-decoration: underline;
+	}
+}

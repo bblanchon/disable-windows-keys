@@ -1,22 +1,24 @@
 (function() {
-  var btns = document.querySelectorAll("[data-toggle=modal]")
-  for (var i=0; i<btns.length; i++) {
-    var btn = btns[i]
+  let btns = document.querySelectorAll("[data-toggle=modal]")
+  for (let i=0; i<btns.length; i++) {
+    let btn = btns[i]
+    let target = document.querySelector(btn.getAttribute("href"))
     btn.addEventListener("click", function(e) {
-      var t = document.querySelector(btn.getAttribute("href"))
-      t.style.visibility = 'visible';
+      target.style.visibility = 'visible'
       e.preventDefault();
     });
   }
 })();
 
 (function() {
-  var btns = document.querySelectorAll("[data-dismiss=modal]")
-  for (var i=0; i<btns.length; i++) {
-    var btn = btns[i]
+  let btns = document.querySelectorAll("[data-dismiss=modal]")
+  for (let i=0; i<btns.length; i++) {
+    let btn = btns[i]
     btn.addEventListener("click", function(e) {
-      var t = document.querySelector(".modal")
-      t.style.visibility = 'hidden';
+      let modals = document.querySelectorAll(".modal")
+      for (let j=0; j<modals.length; j++) {
+        modals[j].style.visibility = 'hidden'
+      }
       e.preventDefault();
     });
   }
