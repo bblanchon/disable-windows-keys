@@ -24,11 +24,11 @@ void ShowErrorF(HINSTANCE hInstance, LPCTSTR format, ...) {
 }
 
 int WINAPI _tWinMain(__in HINSTANCE hInstance, __in_opt HINSTANCE hPrevInstance,
-                     __in LPSTR lpCmdLine, __in int nShowCmd) {
+                     __in LPTSTR lpCmdLine, __in int nShowCmd) {
 
   UNREFERENCED_PARAMETER(hPrevInstance);
 
-  LANGID langid = _tcstoul(lpCmdLine, NULL, 16);
+  LANGID langid = (LANGID)_tcstoul(lpCmdLine, NULL, 16);
   SetThreadUILanguage(langid);
 
   HMODULE hdll = LoadLibrary(hookDllName);
