@@ -4,17 +4,15 @@
 	  <meta charset="utf-8">
 	  <meta http-equiv="X-UA-Compatible" content="IE=edge">
 	  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	  {% include js/analytics.html %}
+	  {% include js/gtm.head.html %}
 	  <link rel="icon" type="image/png" sizes="16x16" href="{{ 'images/favicon16.png' | relative_url }}">
 	  <link rel="icon" type="image/png" sizes="32x32" href="{{ 'images/favicon32.png' | relative_url }}">
 	  <link rel="icon" type="image/png" sizes="64x64" href="{{ 'images/favicon64.png' | relative_url }}">
 	  {%- seo -%}
 	  <link rel="stylesheet" href="{{ 'style.css' | relative_url }}">
-	  {%- if jekyll.environment == 'production' and site.google_analytics -%}
-	    {%- include google-analytics.html -%}
-	  {%- endif -%}
 	</head>
   <body>
+	{% include js/gtm.body.html %}
     {{ content }}
     <script src="{{ 'bundle.js' | relative_url }}"></script>
     <script src="https://payhip.com/payhip.js"></script>
