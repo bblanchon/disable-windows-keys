@@ -5,3 +5,8 @@
 	display: inline-block;
 	margin: 10px;
 }
+
+.btn.bg-0:hover {
+	background-color: lighten($color0, 10%);
+	box-shadow: 0 0 10px rgba(white, 0.5);
+}
