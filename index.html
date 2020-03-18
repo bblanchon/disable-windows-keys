@@ -20,14 +20,17 @@ image: /images/disable-windows-keys-1200.png
 	<section class="fullscreen bg-3">
 		<h2 data-aos="fade-up" id="games">Perfect for games</h2>
 		<div class="row">
-			<img src="{{ 'images/fortnite.jpg' | relative_url }}" alt="Fortnite" class="col dropshadow thumbnail"  data-aos="fade-up" data-aos-anchor="#games" data-aos-delay="100">
-			<img src="{{ 'images/overcooked-2.jpg' | relative_url }}" alt="Overcooked! 2" class="col dropshadow thumbnail"  data-aos="fade-up" data-aos-anchor="#games" data-aos-delay="200">
-			<img src="{{ 'images/dota-2.jpg' | relative_url }}" alt="Dota 2" class="col dropshadow thumbnail"  data-aos="fade-up" data-aos-anchor="#games" data-aos-delay="300">
-			<img src="{{ 'images/overwatch.jpg' | relative_url }}" alt="Overwatch" class="col dropshadow thumbnail"  data-aos="fade-up" data-aos-anchor="#games" data-aos-delay="400">
-			<img src="{{ 'images/world-of-warcraft.jpg' | relative_url }}" alt="World Of Warcraft" class="col dropshadow thumbnail" data-aos="fade-up" data-aos-anchor="#games" data-aos-delay="500">
+			{% for game in site.data.games %}
+			<img src="{{ game.image | relative_url }}" alt="{{ game.name }}" class="col dropshadow thumbnail"  data-aos="fade-up" data-aos-anchor="#games" data-aos-delay="{{ forloop.index }}00">
+			{% endfor %}
 		</div>
-		<p data-aos="fade-up" data-aos-anchor="#games" data-aos-delay="600">
-			Works with every game, including Overcooked!, Wow, Overwatch, Fortnite, and Dota 2.
+		<p data-aos="fade-up" data-aos-anchor="#games" data-aos-delay="{{ site.data.games | size }}00">
+			Works with every game, including: 
+			{% for game in site.data.games %}
+			{%- unless forloop.first -%},{% endunless %}
+			{% if forloop.last %}and{% endif %}
+			{{ game.short_name | default: game.name }}
+			{%- endfor -%}.
 		</p>
 	</section>
 

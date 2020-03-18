@@ -1,0 +1,20 @@
+- name: Fortnite
+  image: images/fortnite.jpg
+
+- name: Overcooked! 2
+  image: images/overcooked-2.jpg
+
+- name: Dota 2
+  image: images/dota-2.jpg
+
+- name: Overwatch
+  image: images/overwatch.jpg
+
+- name: World Of Warcraft
+  image: images/world-of-warcraft.jpg
+  short_name: WoW
+
+- name: "Counter Strike: Global Offensive"
+  image: images/cs-go.jpg
+  short_name: CSGO
+
