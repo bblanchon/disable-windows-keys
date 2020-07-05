@@ -11,8 +11,9 @@
 	  <link rel="icon" type="image/png" sizes="16x16" href="{{ 'images/favicon16.png' | relative_url }}">
 	  <link rel="icon" type="image/png" sizes="32x32" href="{{ 'images/favicon32.png' | relative_url }}">
 	  <link rel="icon" type="image/png" sizes="64x64" href="{{ 'images/favicon64.png' | relative_url }}">
-	  {%- seo -%}
+	  {%- seo title=false -%}
 	  <link rel="stylesheet" href="{{ 'style.css' | relative_url }}?{{timestamp}}">
+	  <title>{{page.title}}</title>
 	</head>
   <body>
   	{%- if jekyll.environment == 'production' -%}

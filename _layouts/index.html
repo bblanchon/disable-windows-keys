@@ -1,0 +1,150 @@
+---
+layout: base
+image: /images/disable-windows-keys-1200.png
+---
+
+{% assign lang=site.data.lang[page.lang] %}
+<main class="font-size-xxl">
+	<header class="fullscreen bg-1">
+	  <img src="{{ 'images/disable-windows-keys-logo.svg' | relative_url }}" class="mw-90" alt="{{lang.title}}" id="logo" data-aos="fade-up">
+	  <h1 class="maintitle" data-aos="fade-up" data-aos-anchor="#logo" data-aos-delay="100">{{lang.title}}</h1>
+	  <p class="subtitle" data-aos="fade-up" data-aos-anchor="#logo" data-aos-delay="200">{{lang.catchphrase}}</p>
+	</header>
+
+	<section class="fullscreen bg-2">
+		<h2 data-aos="fade-up" id="usage">{{lang.usage_title}}</h2>
+		<p data-aos="fade-up" data-aos-anchor="#usage" data-aos-delay="100">{{lang.open_to_disable}}</p>
+		<img src="{{ 'images/disable-windows-keys-screenshot.png' | relative_url }}" alt="{{lang.screenshot_alt}}" class="dropshadow mw-90" data-aos="fade-up" data-aos-anchor="#usage" data-aos-delay="200">
+		<p data-aos="fade-up" data-aos-anchor="#usage" data-aos-delay="300">{{lang.close_to_enable}}</p>
+	</section>
+
+	<section class="fullscreen bg-3">
+		<h2 data-aos="fade-up" id="games">{{lang.games_title}}</h2>
+		<div class="row">
+			{% for game in site.data.games %}
+			<img src="{{ game.image | relative_url }}" alt="{{ game.name }}" class="col dropshadow thumbnail"  data-aos="fade-up" data-aos-anchor="#games" data-aos-delay="{{ forloop.index }}00">
+			{% endfor %}
+		</div>
+		<p data-aos="fade-up" data-aos-anchor="#games" data-aos-delay="{{ site.data.games | size }}00">
+			{{lang.works_with_all_games}}
+			{% for game in site.data.games %}
+			{%- unless forloop.first or forloop.last -%},{% endunless %}
+			{%- if forloop.last -%}{{lang.and}}{% endif %}
+			{{ game.short_name | default: game.name }}
+			{%- endfor -%}.
+		</p>
+	</section>
+
+	<section class="fullscreen bg-2">
+		<h2 data-aos="fade-up" id="features">{{lang.features_title}}</h2>
+		<ul>
+			{% for feature in lang.features %}
+			<li data-aos="fade-up" data-aos-anchor="#features" data-aos-delay="{{forloop.index}}00">{{feature}}</li>
+			{% endfor %}
+		</ul>
+	</section>
+
+	<section class="fullscreen bg-4">
+		<h2 data-aos="fade-up">{{lang.pricing_title}}</h2>
+		<div class="row">
+			<div class="card col bg-5" data-aos="fade-right">
+				<h3 class="card-header">{{lang.source_code}}</h3>
+				<div class="card-body">
+					<p class="h3 text-align-center text-glow">{{lang.free}}</p>
+					<ul>
+						<li>{{lang.compile_yourself}}</li>
+						<li>CMake + MSVC</li>
+					</ul>
+					<p class="text-align-center">
+						<a href="https://github.com/bblanchon/disable-windows-keys" class="btn bg-0" id="project">{{lang.go_to_github}}</a>
+					</p>
+				</div>
+			</div>
+			<div class="card col bg-5" data-aos="fade-left">
+				<h3 class="card-header">{{lang.ready_to_use}}</h3>
+				<div class="card-body">
+					<p class="h3 text-align-center text-glow">$1</p>
+					<ul>
+						<li>{{lang.signed_files}}</li>
+						<li>{{lang.secure_payment}}</li>
+					</ul>
+					<p class="text-align-center">
+						<a href="https://payhip.com/b/T6si"
+						   id="purchase"
+						   class="payhip-buy-button btn bg-0"
+						   data-theme="none"
+						   data-product="T6si"
+						   data-initiated="true"
+						   data-success-callback="reportPurchase">
+						{{lang.purchase}}</a>
+						<br>
+						(via <a href="https://payhip.com?fp_ref=bblanchon" id="payhip">PayHip</a>)
+					</p>
+				</div>
+			</div>
+		</div>
+	</section>
+</main>
+
+<footer class="footer">
+	<nav>
+		<a class="nav-link" href="#about" data-toggle="modal">{{lang.about_title}}</a>
+		<a class="nav-link" href="#support" data-toggle="modal">{{lang.support_title}}</a>
+	</nav>
+</footer>
+
+<aside class="modal" id="about">
+	<div class="modal-body">
+		<a href="#" title="Close" class="modal-close" data-dismiss="modal">&times;</a>
+		<h2 class="modal-title">{{lang.about_title}}</h2>
+		{{lang.about_body|markdownify}}
+	</div>
+</aside>
+
+<aside class="modal" id="support">
+	<div class="modal-body">
+		<a href="#" title="Close" class="modal-close" data-dismiss="modal">&times;</a>
+		<h2 class="modal-title">{{lang.support_title}}</h2>
+		<p>{{lang.support_body_top}}</p>
+		<p class="text-align-center">
+			<a href="https://github.com/bblanchon/disable-windows-keys/issues" id="issues" class="btn bg-0">{{lang.support_button}}</a>
+		</p>
+		<p>{{lang.support_body_bottom}}</p>
+	</div>
+</aside>
+
+<script type="application/ld+json">
+{
+	"@context":"http://schema.org",
+	"@type":"SoftwareApplication",
+	"name":"{{site.title}}",
+	"description":"{{site.description}}",
+	"screenshot":[
+		"{{ 'images/disable-windows-keys-screenshot.png' | absolute_url }}"
+	],
+	"image":"{{ 'images/disable-windows-keys-1200.png' | absolute_url }}",
+	"applicationCategory":"UtilitiesApplication",
+	"operatingSystem":"Windows 7, 8, or 10",
+	"author":{
+		"@type":"Person",
+		"name":"Benoit Blanchon",
+		"url":"https://benoitblanchon.fr"
+	},
+	"offers": [
+		{
+			"@type": "Offer",
+			"name": "Source code",
+			"price": "0",
+			"priceCurrency": "USD",
+			"url": "https://github.com/bblanchon/disable-windows-keys"
+		},
+		{
+			"@type": "Offer",
+			"name": "Ready to use",
+			"price": "1.00",
+			"priceCurrency": "USD",
+			"url": "https://payhip.com/b/T6si"
+		}
+	]
+}
+</script>

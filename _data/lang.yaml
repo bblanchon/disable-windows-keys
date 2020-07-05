@@ -1,0 +1,97 @@
+en:
+  title: Disable Windows Keys
+  logo_alt: Icon of Disable Windows Keys
+  catchphrase: The simplest way to disable the Windows keys!
+  usage_title: Easy to use
+  open_to_disable: Open the app to disable the Windows keys.
+  close_to_enable: Close the app to re-enable them.
+  screenshot_alt: Screenshot of Disable Windows Keys
+  games_title: Perfect for games
+  works_with_all_games: "Works with every game, including: "
+  and: ", and"
+  features_title: Features
+  features:
+    - Dead simple, no useless feature
+    - Tiny footprint
+    - Works on Windows 7, 8, and 10
+    - Self-contained, nothing else to download
+    - Translated in several languages
+    - Signed binary files for more security
+    - Open-source
+  pricing_title: Pricing
+  source_code: Source code
+  ready_to_use: Ready to use
+  compile_yourself: Compile yourself
+  go_to_github: Go to GitHub
+  free: Free
+  signed_files: Signed files
+  secure_payment: Secure payment
+  purchase: Purchase
+  about_title: About
+  about_body: |
+    This application was written by [Benoît Blanchon](https://twitter.com/BenoitBlanchon){:#twitter},
+    an experienced developper who has been committed to open-source software for more than a decade.
+    He created the two popular projects [ArduinoJson](https://arduinojson.org){:#arduinojson} and
+    [Winpooch](https://sf.net/projects/winpooch){:#winpooch}, and wrote the book
+    [Mastering ArduinoJson](https://arduinojson.org/book){:#mastering-arduinojson}.
+
+    You can follow Benoît's work on:
+
+    * [His blog](https://blog.benoitblanchon.fr/){:#blog}
+    * [GitHub](https://github.com/bblanchon/){:#github}
+    * [C++ for Arduino](https://cpp4arduino.com/){:#cpp4arduino}
+    * [YouTube](https://www.youtube.com/channel/UC8HZRqN4wfytHfRGMLUQWkQ){:#youtube}
+    * [StackOverflow](https://stackoverflow.com/users/1164966){:#stackoverflow}
+  support_title: Support
+  support_body_top: Whether your are free or a paying user of this application, you can ask for assistance on the GitHub project page.
+  support_button: Ask for assistance
+  support_body_bottom: Opening a ticket requires a free GitHub account.
+
+fr:
+  title: Désactiver les touches Windows
+  logo_alt: Icone de Désactiver les touches Windows
+  catchphrase: Le moyen le plus simple pour désactiver les touches Windows !
+  usage_title: Facile à utiliser
+  open_to_disable: Ouvrez l'app pour désactiver les touches Windows.
+  close_to_enable: Fermez l'app pour les réactiver.
+  screenshot_alt: Capture d'écran de Désactiver les touches Windows
+  games_title: Parfait pour les jeux
+  works_with_all_games: "Fonctionne avec tous les jeux, dont : "
+  and: " et"
+  features_title: Caractéristiques
+  features:
+    - Ultra simple, pas de fonctionnalité inutile
+    - Super léger
+    - Fonctionne sous Windows 7, 8 et 10
+    - Appli native, rien d'autre à télécharger
+    - Traduite dans plusieurs langues
+    - Binaire signé pour garantir l'authenticité
+    - Open-source
+  pricing_title: Prix
+  source_code: Code source
+  ready_to_use: Prêt à utiliser
+  compile_yourself: Compilez vous-même
+  go_to_github: Aller sur GitHub
+  free: Gratuit
+  signed_files: Fichiers signés
+  secure_payment: Paiement sécurisé
+  purchase: Acheter
+  about_title: A propos
+  about_body: |
+    Cette application a été créée par [Benoît Blanchon](https://twitter.com/BenoitBlanchon){:#twitter},
+    un développeur expérimenté engagé dans le logiciel open-source depuis plus de dix ans.
+    Il est l'auteur de deux projets très populaires&nbsp;: [ArduinoJson](https://arduinojson.org){:#arduinojson} et
+    [Winpooch](https://sf.net/projects/winpooch){:#winpooch}, et il a écrit le livre
+    [Mastering ArduinoJson](https://arduinojson.org/book){:#mastering-arduinojson}.
+
+    Vous pouvez suivre son travail (en Anglais) sur&nbsp;:
+
+    * [Son blog](https://blog.benoitblanchon.fr/){:#blog}
+    * [GitHub](https://github.com/bblanchon/){:#github}
+    * [C++ for Arduino](https://cpp4arduino.com/){:#cpp4arduino}
+    * [YouTube](https://www.youtube.com/channel/UC8HZRqN4wfytHfRGMLUQWkQ){:#youtube}
+    * [StackOverflow](https://stackoverflow.com/users/1164966){:#stackoverflow}
+  support_title: Assistance
+  support_body_top: Que vous soyez un client payant ou gratuit, vous pouvez demander de l'aide sur la page GitHub du projet.
+  support_button: Demander de l'aide
+  support_body_bottom: Ouvrir un ticket demande d'avoir un compte GitHub (gratuit).
