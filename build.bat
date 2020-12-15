@@ -9,7 +9,7 @@ setlocal
 
 mkdir "%BUILD_DIR%"
 pushd "%BUILD_DIR%"
-  cmake -G "Visual Studio 16 2019" -A Win32 %SOURCE_DIR% || goto :ERROR
+  cmake -G "Visual Studio 16 2019" -A Win32 %SOURCE_DIR% -DSIGN=ON || goto :ERROR
   cmake --build . --config %CONFIGURATION% -t setup || goto :ERROR
 popd
 
