@@ -48,5 +48,5 @@ It's so simple **my mom could use it!**  👵
 
 You can get this app for free by compiling it from the source code.
 
-Alternatively, you can [purchase the binary version for just $1](https://payhip.com/b/T6si).  
+Alternatively, you can [purchase the binary version for just 1€](https://payhip.com/b/T6si).  
 The executable is signed with my personal certificate, so you know it hasn't been tampered.
